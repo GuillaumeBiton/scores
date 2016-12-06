@@ -1,0 +1,10 @@
+CACHE MANIFEST
+
+CACHE:
+./index.html
+https://unpkg.com/vue/dist/vue.js
+
+NETWORK:
+*
+
+# Hash Version: 0.0.1
