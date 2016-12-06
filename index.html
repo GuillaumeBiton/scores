@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <title>scores</title>
+
+  <style media="screen">
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: auto;
+      height: 100%;
+    }
+    .scoreboard {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .team {
+      flex: 1;
+      font-size: 40vw;
+      text-align: center;
+    }
+    .actions {
+      padding: 10px;
+    }
+    .button {
+      text-decoration: none;
+      text-align: center;
+      display: block;
+      border-radius: 2px;
+      line-height: 36px;
+      box-sizing: border-box;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      appearance: none;
+      background: none;
+      padding: 0 10px;
+      margin: 0;
+      height: 36px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-family: inherit;
+      cursor: pointer;
+      min-width: 64px;
+      padding: 0 10px;
+      position: relative;
+      overflow: hidden;
+      outline: 0;
+      border: none;
+    }
+    .button.button-fill, .theme-black {
+      background: #000;
+      color: #fff;
+    }
+
+    .theme-black .button.button-fill {
+      background: #fff;
+      color: #000;
+    }
+  </style>
+
+</head>
+
+<body class="theme-black">
+  <div id="app" class="scoreboard">
+    <div class="team" @click="home.score += 1">{{ home.score }}</div>
+    <div class="actions">
+      <button class="button button-fill" @click="reset">Reset</button>
+    </div>
+    <div class="team" @click="guest.score +=1">{{ guest.score }}</div>
+  </div>
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        home: {
+          score: 0
+        },
+        guest: {
+          score: 0
+        }
+      },
+      methods: {
+        reset() {
+          return this.home.score = this.guest.score = 0
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

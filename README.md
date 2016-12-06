@@ -1,2 +1,2 @@
 # scores
-scoreboard app 
+scoreboard app
